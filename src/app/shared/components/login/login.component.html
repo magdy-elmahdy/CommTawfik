@@ -1,0 +1,35 @@
+ <!----------------------------- End login ----------------->
+  <div id="Login-page" class="py-4">
+    <div class="">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-12">
+               <h1 class="main_color text-center fw-bold">Sign In</h1>
+               <!-- <p class="Head2">Login now to Tabeeb</p> -->
+               <form [formGroup]="loginForm">
+
+                  <div class="formGroup">
+                    <label style="color: #0dcaf0;" class="fw-bold">UserName</label>
+                    <input formControlName="userName" type="text" class="form-control">
+                  </div>
+
+                  <div class="formGroup mt-3">
+                      <label style="color: #0dcaf0;" class="fw-bold">Password</label>
+                      <input formControlName="password" type="text" class="form-control">
+                  </div>
+
+
+               <div class="mt-4">
+                  <button [disabled]="this.loginForm.status=='INVALID'||this.isClicked" (click)="submitLoginForm()" class="px-4 w-50 btn btn-primary">
+                    <span *ngIf="!isClicked" class="h6 ">Login</span>
+                    <span *ngIf="isClicked" class="h5">Waiting ... </span>
+                  </button>
+               </div>
+               
+               
+            </form>
+           </div>
+       </div> 
+   </div>
+    </div>
+</div>

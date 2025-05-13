@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light bg-info">
+    <div class="container">
+      <h2 class="navbar-brand" href="#">Market</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ml-auto">
+          <li class="nav-item">
+            <!-- User -->
+            <a *ngIf="this._AuthService.isLoggedIn()&&this.UserType=='User@123'" class="nav-link active" routerLink="/products">Products</a>
+            <!-- Admin -->
+            <a *ngIf="this._AuthService.isLoggedIn()&&this.UserType=='Admin@123'" class="nav-link active" routerLink="/productsAdmin">Products</a>
+          </li>
+          <li class="nav-item">
+            <!-- User -->
+            <a *ngIf="this._AuthService.isLoggedIn()&&this.UserType=='User@123'" class="nav-link active" routerLink="/cart">Cart</a>
+            <!-- Admin -->
+            <a *ngIf="this._AuthService.isLoggedIn()&&this.UserType=='Admin@123'" class="nav-link active" routerLink="/cartAdmin">Cart</a>
+          </li>
+        </ul>
+        <button *ngIf="this._AuthService.isLoggedIn()" (click)="logOut()" class="btn btn_test mx-2">
+          Logout 
+        </button>  
+
+      </div>
+    </div>
+  </nav>
