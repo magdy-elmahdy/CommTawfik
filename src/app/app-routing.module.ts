@@ -9,7 +9,7 @@ import { CartAdminComponent } from './admin/components/cart/cart.component';
 import { ProductsDetailsAdminComponent } from './admin/components/products-details/products-details.component';
 
 const routes: Routes = [
-  {path:"",component:AllProductsComponent},
+  {path:"",component:LoginComponent},
   {path:"products",component:AllProductsComponent},
   {path:"details/:id",component:ProductsDetailsComponent},
   {path:"cart",component:CartComponent},
